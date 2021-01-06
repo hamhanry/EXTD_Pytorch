@@ -189,7 +189,7 @@ class EXTD(nn.Module):
         conf = torch.cat([o.view(o.size(0), -1) for o in conf], 1)
 
         if self.phase == 'test':
-            output = self.detect(
+            output = self.detect.forward(
                 loc.view(loc.size(0), -1, 4),  # loc preds
                 self.softmax(conf.view(conf.size(0), -1,
                                        self.num_classes)),  # conf preds

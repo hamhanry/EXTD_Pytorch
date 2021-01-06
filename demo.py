@@ -29,10 +29,10 @@ import tqdm
 
 
 parser = argparse.ArgumentParser(description='EXTD demo')
-parser.add_argument('--save_dir', type=str, default='tmp/',
+parser.add_argument('--save_dir', type=str, default='D:/Dev/repo/EXTD_Pytorch/tmp/',
                     help='Directory for detect result')
 parser.add_argument('--model', type=str,
-                    default='weights/EXTD_64.pth', help='trained model')
+                    default='D:/Dev/repo/EXTD_Pytorch/weights/EXTD_64.pth', help='trained model')
 parser.add_argument('--thresh', default=0.6, type=float,
                     help='Final confidence threshold')
 args = parser.parse_args()
@@ -120,7 +120,7 @@ if __name__ == '__main__':
         net.cuda()
         cudnn.benckmark = True
 
-    img_path = './img'
+    img_path = 'D:/Dev/repo/EXTD_Pytorch/img'
     img_list = [os.path.join(img_path, x)
                 for x in os.listdir(img_path) if x.endswith('jpg')]
 
